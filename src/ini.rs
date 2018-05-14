@@ -236,9 +236,9 @@ impl Ini {
         Ini { sections: HashMap::new(), }
     }
 
-    pub fn raw(&self) -> HashMap<Option<String>, Properties>
+    pub fn raw(&self) -> &HashMap<Option<String>, Properties>
     {
-        self.sections
+        &self.sections
     }
     
     /// Set with a specified section, `None` is for the general section
