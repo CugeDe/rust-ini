@@ -236,6 +236,11 @@ impl Ini {
         Ini { sections: HashMap::new(), }
     }
 
+    pub fn raw(&self) -> HashMap<Option<String>, Properties>
+    {
+        self.sections
+    }
+    
     /// Set with a specified section, `None` is for the general section
     pub fn with_section<'b, S>(&'b mut self, section: Option<S>) -> SectionSetter<'b>
         where S: Into<String>
